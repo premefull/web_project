@@ -42,12 +42,12 @@
                 <label>Username</label>
             </div>
             <div class="txt_field">
-                <input type="Surname" name = surname_stent required>
+                <input type="Surname" name = "surname_stent" required>
                 <span></span>
                 <label>Surname</label>
             </div>
             <div class="txt_field">
-                <input type="password" name = password_stent required>
+                <input type="password" name = "password_stent" required>
                 <span></span>
                 <label>Password</label>
             </div>
