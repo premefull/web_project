@@ -10,6 +10,34 @@
     <meta charset="utf-8">
     <title>Animated Login Form | CodingNepal</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 137px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
 </head>
 
 <body>
@@ -56,7 +84,7 @@
                 <label>Email</label>
             </div>
             <!--<div class="pass">Forgot Password?</div> -->
-            <button type="submit" name="signup_admin" herf="login_admin.php">login</button>
+            <button class="button button1" type="submit" name="login_admin" herf="page.html">signup</button>
 
             <div class="signup_link">
                 <a href="login_admin.php">Back</a>
