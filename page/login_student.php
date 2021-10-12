@@ -73,11 +73,11 @@
                 <label>Password</label>
             </div>
             <!--<div class="pass">Forgot Password?</div><input type="submit" value="Login"> -->
-            <button class="button button1" type="submit" name="login_admin" herf="page.html">login</button>
+            <button class="button button1" type="submit" name="login_student" herf="studentpage1.html">login</button>
             <div class="signup_link">
-                Not a member? <a href="signup_admin.html">Signup</a>
+                Not a member? <a href="signup_student.php">Signup</a>
                 <br>
-                <a href="#">Back</a>
+                <a href="page1.html">Back</a>
             </div>
         </form>
     </div>

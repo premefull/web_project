@@ -46,7 +46,7 @@
         <h1>Signup Admin
             <Abbr></Abbr>
         </h1>
-        <form method="post" action="signup_admindb.php">
+        <form method="post" action="signup_admindb.php" action="login_admin.php">
         <?php include('errors.php');?>
         <?php if (isset($_SESSION['error'])) : ?>
         <div class="error">
@@ -84,7 +84,7 @@
                 <label>Email</label>
             </div>
             <!--<div class="pass">Forgot Password?</div> -->
-            <button class="button button1" type="submit" name="login_admin" herf="page.html">signup</button>
+            <button class="button button1" type="submit" name="signup_admin" herf="login_admin.php">signup</button>
 
             <div class="signup_link">
                 <a href="login_admin.php">Back</a>

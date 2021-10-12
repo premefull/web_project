@@ -47,7 +47,7 @@
         <h1>Signup Student
             <Abbr></Abbr>
         </h1>
-        <form method="post" action="signup_studentdb.php">
+        <form method="post" action="signup_studentdb.php" action="login_student.php">
         <?php include('errors.php');?>
         <?php if (isset($_SESSION['error'])) : ?>
         <div class="error">
@@ -81,7 +81,7 @@
             </div>
            
             <!--<div class="pass">Forgot Password?</div> -->
-            <button class="button button1" type="submit" name="login_admin" herf="page.html">signup</button>
+            <button class="button button1" type="submit" name="signup_student" herf="login_student.php">signup</button>
 
             <div class="signup_link">
                 <a href="login_student.php">Back</a>
