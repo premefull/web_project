@@ -47,7 +47,7 @@
         <h1>Signup Student
             <Abbr></Abbr>
         </h1>
-        <form method="post" action="signup_studentdb.php" action="login_student.php">
+        <form method="post" action="signup_studentdb.php" enctype="multipart/form-data">
         <?php include('errors.php');?>
         <?php if (isset($_SESSION['error'])) : ?>
         <div class="error">
@@ -78,6 +78,12 @@
                 <input type="password" name = "password_stent" required>
                 <span></span>
                 <label>Password</label>
+            </div>
+            <div class="txt_field">
+            <input type="file" name="S_image" />
+    
+                <span></span>
+                <!--label>Image</label-->
             </div>
            
             <!--<div class="pass">Forgot Password?</div> -->

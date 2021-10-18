@@ -8,11 +8,20 @@
         $username = mysqli_real_escape_string($conn , $_POST['username_student']);
         $surname = mysqli_real_escape_string($conn , $_POST['surname_stent']);
         $password = mysqli_real_escape_string($conn , $_POST['password_stent']);
+       
+        //อัพโหลดรูปเข้าไปในไฟล์ฟรอม
+        $ext = strrchr($_FILES['S_image']['name'],".");     
+        $new_image_name = $username."_".$idstudent.$ext ;
+        $image_path = "facedata/";
+        $upload_path = $image_path.$new_image_name;
         
-        
-         
+        //อัพจากไฟล์ฟรอมขึ้นเว็บ
+        move_uploaded_file($_FILES['S_image']['tmp_name'],$upload_path);
 
-    
+       
+        //ชื่อภาพใหม่ไปใส่ดาต้าอีกครั้ง
+        $S_image = $new_image_name;
+
         $user_check_query ="SELECT * FROM  student  WhERE S_name = '$username' OR S_id = '$idstudent' ";
         $query = mysqli_query($conn , $user_check_query);
         $result = mysqli_fetch_assoc($query);
@@ -28,7 +37,7 @@
         }
         if(count($errors)==0){
             
-            $sql = "INSERT INTO student(S_id,S_name,S_surname,S_Pass) VALUES ('$idstudent','$username','$surname','$password')";
+            $sql = "INSERT INTO student(S_id,S_name,S_surname,S_image,S_pass) VALUES ('$idstudent','$username','$surname','$S_image','$password')";
             mysqli_query($conn,$sql);
 
             $_SESSION['name'] = $username;
