@@ -74,7 +74,7 @@
             </div>
             <!--<div class="pass">Forgot Password?</div><input type="submit" value="Login"> -->
            
-            <button class="button button1" type="submit" name="login_admin" herf="page.html">login</button>
+            <button class="button button1" type="submit" name="login_admin" herf="adminpage1">login</button>
             <div class="signup_link">
                 Not a member? <a href="signup_admin.php">Signup</a>
                 <br>

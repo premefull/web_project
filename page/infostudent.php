@@ -265,7 +265,7 @@
                         <td><?php echo $data["S_name"]; ?></td>
                         <td><?php echo $data["S_surname"]; ?></td>
                         <td><?php echo $data["S_pass"]; ?></td>
-                        <td><?php echo "<img src='../fileupload/".$objResult["Image"]."' width='100' >"; ?></td>
+                        <td><?php echo "<img src='facedata/".$data["S_image"]."' width='100' >"; ?></td>
     
                         </td>
 

@@ -21,7 +21,7 @@
                     $_SESSION['success'] = "Your are now logged in";
                    
                    
-                    header("location: page.html");
+                    header("location: adminpage1.html");
 
             }else{
                 array_push($errors,"Wrong username/password combination");
