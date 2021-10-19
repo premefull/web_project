@@ -49,7 +49,7 @@
         <h1>Login Student
             <Abbr></Abbr>
         </h1>
-        <form method="post" action="login_studentdb.php">
+        <form method="post" action="login_studentdb.php" action=studentpage1.html>
         <?php include('errors.php');?>
         <?php if (isset($_SESSION['error'])) : ?>
         <div class="error">

@@ -1,15 +1,19 @@
+<?php
+    session_start();
+    include('connect.php');
+?>
+
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en" dir="ltr">
 
-<head>
-  
+<head>  
     <meta charset="utf-8">
     <title>Animated Login Form | CodingNepal</title>
-    <link rel="stylesheet" href="style.css">
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 <style>
+
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
@@ -33,13 +37,13 @@ body {
 }
  
 .sidebar a.active {
-  background-color: #04AA6D;
-  color: white;
+  background-color: #FFCC33;
+  color: white; /*แถบเขียวด้านข้าง*/
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
+  background-color: #555	;
+  color: white;   /*เลื่อนแล้วมีสีเทา */
 }
 
 div.content {
@@ -69,19 +73,32 @@ div.content {
 <body>
 
 <div class="sidebar">
-  <a class="active" href="#home">Home</a>
-  <a href="profliestudent.php">ประวัติส่วนตัว</a>
+  <a href="studentpage1.html">Home</a>
+  <a class="active" href="#proflie">ประวัติส่วนตัว</a>
   <a href="#everything">ภาพรวมการใช้ห้อง</a>
   <a href="classroomstu.php">ห้องเรียน</a>
 </div>
 
 <div class="content">
-  <h2>คิดคอนเทนต์ไม่ออกจ้า คิดไรออกก็มาบอกบ้างงง</h2>
-  <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px or less.</p>
-  <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.</p>
-  <h3>Resize the browser window to see the effect.</h3>
+<?php
+
+    $sql = " SELECT *  FROM student";
+    $Query = mysqli_query($conn, $sql) or die("Error Query [" . $sql . "]");
+?>
+
+      <?php foreach ($Query as $data){ ?>
+      <tr>
+          <center><br><h2>ประวัติส่วนตัวนักศึกษา</h2></center>
+          <center><br><?php echo "<img src='facedata/".$data["S_image"]."' width='300' >"; ?></center>
+          <h3><br>ชื่อ.<?php echo $data["S_name"];?></h3>
+          <h3><br>นามสกุล.<?php echo $data["S_surname"];?></h3>
+          <h3><br>รหัสนักศึกษา.<?php echo $data["S_id"];?></h3>
+          <!-- <h3><br>อีเมลนักศึกษา.<?php echo "s".$data["S_id"]."@email.kmutnb.ac.th";?></h3> -->
+
+      </tr>
+      <?php } ?>
 </div>
 
-
 </body>
+
 </html>
