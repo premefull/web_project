@@ -1,6 +1,10 @@
 <?php
     session_start();
     include('connect.php');
+    if(!isset($_SESSION['username'])){
+      $_SESSION['msg'] = "You must log in first";
+      header('location: login_admin.php');
+  }
 ?>
 
 <!DOCTYPE html>
@@ -9,6 +13,7 @@
 
 <head>  
     <meta charset="utf-8">
+    
     <title>Animated Login Form | CodingNepal</title>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -77,6 +82,7 @@ div.content {
   <a class="active" href="#proflie">ประวัติส่วนตัว</a>
   <a href="#everything">ภาพรวมการใช้ห้อง</a>
   <a href="classroomstu.php">ห้องเรียน</a>
+  <a href="login_student.php">ออกจากระบบ</a>
 </div>
 
 <div class="content">
@@ -86,16 +92,15 @@ div.content {
     $Query = mysqli_query($conn, $sql) or die("Error Query [" . $sql . "]");
 ?>
 
-      <?php foreach ($Query as $data){ ?>
-      <tr>
+      <!-- <?php($Query as $data){ ?> -->
+      
+   
           <center><br><h2>ประวัติส่วนตัวนักศึกษา</h2></center>
-          <center><br><?php echo "<img src='facedata/".$data["S_image"]."' width='300' >"; ?></center>
+          <center><br><?php echo "<img src='facedata/".$data["S_image"]."' width='300'>"; ?></center>
           <h3><br>ชื่อ.<?php echo $data["S_name"];?></h3>
           <h3><br>นามสกุล.<?php echo $data["S_surname"];?></h3>
           <h3><br>รหัสนักศึกษา.<?php echo $data["S_id"];?></h3>
           <!-- <h3><br>อีเมลนักศึกษา.<?php echo "s".$data["S_id"]."@email.kmutnb.ac.th";?></h3> -->
-
-      </tr>
       <?php } ?>
 </div>
 

@@ -77,6 +77,7 @@ div.content {
   <a href="profliestudent.php">ประวัติส่วนตัว</a>
   <a href="#everything">ภาพรวมการใช้ห้อง</a>
   <a class="active" href="#classroom">ห้องเรียน</a>
+  <a href="login_student.php">ออกจากระบบ</a>
 </div>
 
 <div class="content">
