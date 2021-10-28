@@ -18,6 +18,7 @@
             if( mysqli_num_rows($result) == 1){
                
                     $_SESSION['idname'] = $username ;
+                    
                     $_SESSION['success'] = "Your are now logged in";
                    
                    

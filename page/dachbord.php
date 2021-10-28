@@ -1,7 +1,3 @@
-<?php
-    session_start();
-    include('connect.php');
-?>
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en" dir="ltr">
@@ -12,14 +8,13 @@
     <title>Animated Login Form | CodingNepal</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    
 <style>
-  
+
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
 }
-
 .sidebar {
   margin: 0;
   padding: 0;
@@ -68,40 +63,18 @@ div.content {
     text-align: center;
     float: none;
   }
+  
 }
 </style>
 </head>
-
-
 <body>
-
 <div class="sidebar">
   <a href="studentpage1.html">Home</a>
-  <a class="active" href="#proflie">ประวัติส่วนตัว</a>
-  <a href="dachbord.php">ภาพรวมการใช้ห้อง</a>
+  <a href="profliestudent.php">ประวัติส่วนตัว</a>
+  <a class="active" href="#dachbord">ภาพรวมการใช้ห้อง</a>
   <a href="classroomstu.php">ห้องเรียน</a>
   <a href="login_student.php">ออกจากระบบ</a>
 </div>
 
-<div class = "content">
-<?php
-    $check = $_SESSION['idname'];
-    $sql = " SELECT *  FROM student WHERE S_id = '$check' ";
-    $Query = mysqli_query($conn, $sql) or die("Error Query [" . $sql . "]");
-?>
-<?php foreach ($Query as $data){ ?>
-
-
-    <center><br><h2>ประวัติส่วนตัวนักศึกษา</h2><br>
-    <?php echo "<img src='facedata/".$data["S_image"]."'width=250 height=300' >"; ?></center><br>        
-
-<?php }  ?>
-          <h3><br>ชื่อ:<?php echo $data["S_name"];?></h3>
-          <h3><br>นามสกุล:<?php echo $data["S_surname"];?></h3>
-          <h3><br>รหัสนักศึกษา:<?php echo $data["S_id"];?></h3>
-          <h3><br>อีเมลนักศึกษา:<?php echo "s".$data["S_id"]."@email.kmutnb.ac.th";?></h3>
-</div>
-
-</body>
-
+  </body>
 </html>

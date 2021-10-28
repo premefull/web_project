@@ -19,7 +19,7 @@
         move_uploaded_file($_FILES['S_image']['tmp_name'],$upload_path);
 
        
-        //ชื่อภาพใหม่ไปใส่ดาต้าอีกครั้ง
+        //ชื่อภาพใหม่ไปใส่ดาต้าเบสอีกครั้ง
         $S_image = $new_image_name;
 
         $user_check_query ="SELECT * FROM  student  WhERE S_name = '$username' OR S_id = '$idstudent' ";
