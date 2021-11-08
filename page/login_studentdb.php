@@ -27,7 +27,7 @@
             }else{
                 array_push($errors,"Wrong username/password combination");
                 $_SESSION['error'] = "Wrong username or password or try again";
-                header("location: login_admin.php");
+                header("location: login_student.php");
             }
         }
     }

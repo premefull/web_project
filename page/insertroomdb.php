@@ -10,11 +10,21 @@
         $R_width = mysqli_real_escape_string($conn,$_POST['width']);
         $R_height = mysqli_real_escape_string($conn,$_POST['height']);
         
-            
+
+        if($_POST['addclassroom']){
+            $W = $_POST['width'];
+            $L = $_POST['height'];
+            $A = $W * $L;
+            $T = ($A * 30)/100;
+            $R_max = $A - $T;
+        }    
         $sql = "INSERT INTO room(R_room_no,R_building_no,R_floor,R_width,R_height) VALUES ('$R_room','$R_building','$R_floor','$R_width','$R_height')";
         $result1 =mysqli_query($conn,$sql);
         header("location: insertroom.php");
 
+               
+        
+    
     }
 
 ?>

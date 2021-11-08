@@ -120,7 +120,7 @@
 
     /* Modal Content/Box */
     .modal-content {
-        background-color: #fefefe;
+        background-color:#00CC99;
         margin: 5% auto 15% auto;
         /* 5% from the top, 15% from the bottom and centered */
         border: 1px solid #888;
@@ -236,7 +236,6 @@
         <div class="add">
 
             <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">เพิ่มห้องเรียน</button>
-            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">แก้ไข</button>
 
 
         </div>
@@ -255,7 +254,7 @@
                 <div class="container">
 
                     <label><b>เลขที่ห้องเรียน</b></label>
-                    <input type="text" name="numberroom">
+                    <input placeholder="เช่น 618/1 พิมพ์ 6181" type="text" name="numberroom" pattern="[0-9]{1,}">
 
                     <label><b>เลขที่อาคาร/ตึก</b></label>
                     <input type="text" name="numberbuilding">
@@ -268,9 +267,9 @@
 
                     <label><b>ความยาวของห้องเรียน(โดยประมาณ)</b></label>
                     <input  type="text" name="height">
-                    <br>
+                    <br> 
                     <button type="submit" name="addclassroom">เพิ่มห้องเรียน</button>
-                
+                    
 
                 </div>
 
@@ -286,56 +285,6 @@
             $Query2 = mysqli_query($conn, $sql) or die("Error Query [" . $sql . "]");
         
         ?>
-
-
-
-
-        <div id="id02" class="modal">
-
-            <form class="modal-content animate" actionmename="/action_page.php" method="post" action="updateroom.php"
-                enctype="multipart/form-data">
-                <div class="imgcontainer">
-                    <span onclick="document.getElementById('id02').style.display='none'" class="close"
-                        title="Close Modal">&times;</span>
-
-                </div>
-
-
-                <div class="container">
-                    <form action="updateroom.php" method="post" name="update">
-                        <label><b>ห้องเรียน</b></label>
-                        <select name="R_room_no">
-                        <?php foreach ($Query2 as $data){ ?>   
-                                <option value=<?php echo $data["R_room_no"]; ?>><?php echo $data["R_room_no"]; ?>
-                                </option>
-                        <?php } ?>
-                            
-                        </select>
-                        <br><br>
-
-                        <label><b>ความกว้างโดยประมาณ</b></label>
-                        <input type="text" name="width" require>
-                        <br>
-                        <label><b>ความยาวโดยประมาณ</b></label>
-                        <input type="text" name="height" require>
-                        <br>
-                        <button type="submit" style="width:auto;" value="Update" name="ok">Update</button>
-
-
-                    </form>
-
-
-                </div>
-
-            </form>
-
-
-
-        </div>
-
-
-
-
 
 
         <div>
@@ -369,7 +318,10 @@
                             <div align="center">ความยาวโดยประมาณ</div>
                         </th>
                         <th width="100">
-                            <div align="center">Delete</div>
+                            <div align="center">ความจุโดยประมาณ</div>
+                        </th>
+                        <th width="100">
+                            <div align="center">จัดการ</div>
                         </th>
 
 
@@ -387,7 +339,9 @@
                         <td><?php echo $data["R_floor"]; ?></td>
                         <td><?php echo $data["R_width"]; ?></td>
                         <td><?php echo $data["R_height"]; ?></td>
-                        <td align="center"><a href="deletedata.php?room=<?php echo $data["R_room_no"]; ?>">Delete</a>
+                        <td><?php echo $data["R_max_int"]; ?></td>
+                        <td align="center"><a href="editdata.php?R_room_no=<?php echo $data["R_room_no"]; ?>">แก้ไข</a>
+                        <a href="deletedata.php?room=<?php echo $data["R_room_no"]; ?>">ลบ</a>
                         </td>
 
                       
@@ -413,15 +367,6 @@
             }
         }
 
-
-        var modal1 = document.getElementById('id02');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal1) {
-                modal1.style.display = "none";
-            }
-        }
         </script>
         <br><br>
         <center><a href="calssroompage.html">Back</a></center>
