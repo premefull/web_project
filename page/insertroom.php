@@ -10,8 +10,6 @@
         header('location: login_admin.php');
         session_destroy();
     }
-  
-
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +18,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -87,11 +84,11 @@
         position: relative;
     }
 
-
+    /* 
     .container {
         padding: 16px;
 
-    }
+    } */
 
     .container1 {
         margin-top: auto;
@@ -102,40 +99,6 @@
 
     }
 
-
-
-    /* The Modal (background) */
-    .modal {
-        display: none;
-        /* Hidden by default */
-        position: fixed;
-        /* Stay in place */
-        z-index: 1;
-        /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%;
-        /* Full width */
-        height: 100%;
-        /* Full height */
-        overflow: auto;
-        /* Enable scroll if needed */
-        background-color: rgb(0, 0, 0);
-        /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.4);
-        /* Black w/ opacity */
-        padding-top: 60px;
-    }
-
-    /* Modal Content/Box */
-    .modal-content {
-        background-color: #00CC99;
-        margin: 5% auto 15% auto;
-        /* 5% from the top, 15% from the bottom and centered */
-        border: 1px solid #888;
-        width: 30%;
-        /* Could be more or less, depending on screen size */
-    }
 
     /* The Close Button (x) */
     .close {
@@ -212,12 +175,104 @@
 
         color: white;
     }
-
-    .update {}
+    body {
+            margin: 0;
+            font-family: "Lato", sans-serif;
+        }
+        
+        .sidebar {
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+        
+        .sidebar a {
+            display: block;
+            color: black;
+            padding: 16px;
+            text-decoration: none;
+        }
+        
+        .sidebar a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+        
+        .sidebar a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+        
+        div.content {
+            margin-left: 200px;
+            padding: 1px 16px;
+            height: 1000px;
+        }
+        
+        @media screen and (max-width: 700px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .sidebar a {
+                float: left;
+            }
+            div.content {
+                margin-left: 0;
+            }
+        }
+        
+        @media screen and (max-width: 400px) {
+            .sidebar a {
+                text-align: center;
+                float: none;
+            }
+        }
+        
+        div {
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            color: #76ff8d;
+        }
+        
+        p {
+            text-indent: 50px;
+            text-align: justify;
+            letter-spacing: 3px;
+            padding-left: 250px;
+            padding-right: 10px;
+            color: #e0ee20;
+            font-size: 20px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #b91c1c;
+        }
+        
+        
     </style>
 </head>
 
 <body>
+    <div class="sidebar">
+        <a class="active" href="adminpage1.html">หน้าหลัก</a>
+        <a href="dashboard.php">แดชบอร์ด</a>
+        <a href="calssroompage.html">ห้องเรียน</a>
+        <a href="insertroom.php">จัดการห้องเรียน</a>
+        <a href="#about">พิกัดจุด</a>
+        <a href="infostudent.php">ข้อมูลนักศึกษา</a>
+        <a href="login_admin.php">ออกจากระบบ</a>
+    </div>
 
     <?php  if(isset($_SESSION)):?>
     <div class="success">
@@ -225,21 +280,8 @@
 
         <center>
             <h3>Welcome <strong><?php echo $_SESSION['username'];?></strong></h3>
-
-            <div class="content">
-                <!-- logged in user information -->
-                <?php if(isset($_SESSION['username']) ) : ?>
-                <p><a href="insertroom.php?  logout='1'" class>Logout</a></p>
-                <?php endif ?>
-
-            </div>
         </center>
-
-
         <?php endif ?>
-
-
-
 
 
         <div class="add">
@@ -351,12 +393,10 @@
                         <td><?php echo $data["R_height"]; ?></td>
                         <td><?php echo $data["R_max_int"]; ?></td>
                         <td align="center">
-                            <a class="dropdown-item " onclick="showEditUser(<?php echo $data["R_room_no"]; ?> )">ข้อมูลส่วนตัว</a>
-                            <a href="editdata.php?R_room_no=<?php echo $data["R_room_no"]; ?>">แก้ไข</a>
+                            <a class="dropdown-item"
+                                onclick="showEditUser(<?php echo $data["R_room_no"]; ?> )">แก้ไข</a>
                             <a href="deletedata.php?room=<?php echo $data["R_room_no"]; ?>">ลบ</a>
                         </td>
-
-
                     </tr>
                     <?php }  ?>
 
@@ -364,17 +404,17 @@
 
             </center>
 
-
         </div>
 
         <br><br>
-        <center><a href="calssroompage.html">Back</a></center>
+        
 
-        <div class="modal fade " id="modal_Editusername" tabindex="-1" aria-labelledby="exampleModalLabel"  aria-hidden="true" aria-labelledby="exampleModalLable">
+        <div class="modal fade" id="modal_Editusername" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true" aria-labelledby="exampleModalLable">
             <div class="modal-dialog ">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">ข้อมูล</h5>
+                        <h5 class="modal-title">ข้อมูลส่วนตัว</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="Editusername_detail">
@@ -383,16 +423,14 @@
                 </div>
             </div>
         </div>
-
 </body>
 
 </html>
 
 <script>
-
 function showEditUser(R_room_no) {
     console.log("showEditUser ")
-    console.log("R_room_no : ",R_room_no)
+    console.log("R_room_no : ", R_room_no)
     $.ajax({
         type: "POST",
         url: "test.php",
@@ -407,13 +445,40 @@ function showEditUser(R_room_no) {
     });
 }
 
-// Get the modal
-var modal = document.getElementById('id01');
+function submitEditUser() {
+    console.log("submitEditUser");
+    let R_room_no = $('#R_room_no').val();
+    let R_building_no = $('#R_building_no').val();
+    let R_floor = $('#R_floor').val();
+    let R_width = $('#R_width').val();
+    let R_height = $("#R_height").val();
+    console.log("R_room_no =>", R_room_no);
+    console.log("R_building_no =>", R_building_no);
+    console.log("R_floor =>", R_floor);
+    console.log("R_width =>", R_width);
+    console.log("R_height =>", R_height);
+    $.ajax({
+        type: "POST",
+        url: "test.php",
+        data: {
+            function: 'submitEditUser',
+            'roomNo': R_room_no,
+            'buildingNo': R_building_no,
+            'floor': R_floor,
+            'width': R_width,
+            'height': R_height,
+        },
+        dataType: "json",
+        encode: true,
+    }).done(function(data) {
+        if (!data.success) {
+            console.log("submitEditUser : Failure")
+        } else {
+            console.log("submitEditUser : success")
+            location.reload(true);
+        }
+        $('#modal_Editusername').modal('hide');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+    });
 }
 </script>
