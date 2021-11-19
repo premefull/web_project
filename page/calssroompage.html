@@ -108,9 +108,14 @@
         <h1>กล้องตัวที่1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;กล้องตัวที่
             2
         </h1>
+{% comment %} $command = escapeshellcmd('/usr/custom/test.py');
+$output = shell_exec($command); {% endcomment %}
 
-
-        <center><img src="image/camera.jpg" alt="Cinque Terre" width="500" height="500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="image/camera.jpg" alt="Cinque Terre" width="500" height="500"></center>
+        <center>
+        <img src="http://127.0.0.1:5000/video" alt="Cinque Terre" width="500" height="500">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="http://127.0.0.1:5000/video2" alt="Cinque Terre" width="500" height="500">
+        </center>
 
     </center>
     <br>
