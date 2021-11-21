@@ -4,125 +4,39 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Bootstrap Example</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="navbar.css">
     <style>
-
         body {
             margin: 0;
             font-family: "Lato", sans-serif;
+            background: linear-gradient(120deg, #2980b9, #8e44ad);
         }
-        
-        .sidebar {
-            margin: 0;
-            padding: 0;
-            width: 200px;
-            background-color: #f1f1f1;
-            position: fixed;
-            height: 100%;
-            overflow: auto;
-        }
-        
-        .sidebar a {
-            display: block;
-            color: black;
-            padding: 16px;
-            text-decoration: none;
-        }
-        
-        .sidebar a.active {
-            background-color: #04AA6D;
-            color: white;
-        }
-        
-        .sidebar a:hover:not(.active) {
-            background-color: #555;
-            color: white;
-        }
-        
-        div.content {
-            margin-left: 200px;
-            padding: 1px 16px;
-            height: 1000px;
-        }
-        
-        @media screen and (max-width: 700px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-            .sidebar a {
-                float: left;
-            }
-            div.content {
-                margin-left: 0;
-            }
-        }
-        
-        @media screen and (max-width: 400px) {
-            .sidebar a {
-                text-align: center;
-                float: none;
-            }
-        }
-        
-        div {
-            padding: 20px;
-        }
-        
-        h1 {
-            text-align: center;
-            text-transform: uppercase;
-            color: #76ff8d;
-        }
-        
-        p {
-            text-indent: 50px;
-            text-align: justify;
-            letter-spacing: 3px;
-            padding-left: 250px;
-            padding-right: 10px;
-            color: #e0ee20;
-            font-size: 20px;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #b91c1c;
-        }
-        
-        img {}
     </style>
 </head>
 
 <body>
 
-<div class="sidebar">
-    <a class="active" href="adminpage1.html">หน้าหลัก</a>
-    <a href="dashboard.php">แดชบอร์ด</a>
-    <a href="calssroompage.html">ห้องเรียน</a>
-    <a href="insertroom.php">จัดการห้องเรียน</a>
-    <a href="#about">พิกัดจุด</a>
-    <a href="infostudent.php">ข้อมูลนักศึกษา</a>
-    <a href="login_admin.php">ออกจากระบบ</a>
-</div>
-<div class="content">
-    <h1>Social distance detector in classroom</h1>
-    <br>
-    <h1>หรือ ระบบตรวจจับการเว้นระยะห่างทางสังคมในห้องเรียนจากวิดีโอเรียลไทม์</h1>
-    <p>
+    <div class="sidebar">
+        <a class="active" href="adminpage1.html">หน้าหลัก</a>
+        <a href="dashboard.php">แดชบอร์ด</a>
+        <a href="calssroompage.html">ห้องเรียน</a>
+        <a href="insertroom.php">จัดการห้องเรียน</a>
+        <a href="#about">พิกัดจุด</a>
+        <a href="infostudent.php">ข้อมูลนักศึกษา</a>
+        <a href="login_admin.php">ออกจากระบบ</a>
+    </div>
+    <div class="content" >
+        <h1>Social distance detector in classroom</h1>
+        <br>
+        <h1>หรือ ระบบตรวจจับการเว้นระยะห่างทางสังคมในห้องเรียนจากวิดีโอเรียลไทม์</h1>
+        <h3>
         ที่มาและความสำคัญ <br>ของโครงงาน เนื่องจากปัจจุบันได้มีการแพร่ระบาดจากเชื้อไวรัส COVID-19 ระบาดหนักขึ้นอีกทั้งยังมีเชื้อโรคอีกมากมายอยู่รอบๆตัวในปัจจุบัน เพราะฉะนั้นการแก้ปัญหาด้วยการเว้นระยะห่างจึงสามารถช่วยลดความเสี่ยงของการติดเชื้อไวรัส
         COVID-19 ได้ อย่างไรก็ตามเชื้อไวรัส COVID-19 เป็นเชื้อที่สามารถติดต่อผ่านสารคัดหลั่งของมนุษย์เช่น น้ำลาย น้ำมูก เป็นต้น การป้องกันขั้นเบื้องต้นคือการใช้เจลล้างมือและสวมหน้ากากอนามัย เพื่อลดความเสี่ยงในการติดเชื้อ แต่การสำรวจพบว่าผู้คนส่วนใหญ่จะไม่สวมใส่หน้ากากอนามัยภายในพื้นที่ปิด
         และเพื่อเป็นการแก้ปัญหาในส่วนนี้จึงควรมีการป้องการการแพร่ระบาดอย่างอื่นเช่น “การเว้นระยะห่าง” ทางคณะผู้จัดทาจึงเล็งเห็นว่าถ้าหากมีตัวช่วยที่สามารถทาให้รู้ระยะห่างและความเสี่ยงได้จะสามารถช่วยลดการแพร่ระบาด หรือ ช่วยให้สามารถติดตามตัวบุคคลที่เสี่ยงในการติดเชื้อไวรัสCOVID-19
-        ได้ง่ายมากยิ่งขึ้น </p>
-    <center><img src="image/socialdistance.jpg" alt="Cinque Terre" width="700" height="600"></center>
-</div>
+        ได้ง่ายมากยิ่งขึ้น </h3>
+        <center><img src="image/socialdistance.jpg" alt="Cinque Terre" width="700" height="600"></center>
+    </div>
+
 </body>
 
 </html>

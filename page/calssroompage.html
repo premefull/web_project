@@ -4,91 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
     <style>
         body {
             margin: 0;
             font-family: "Lato", sans-serif;
-        }
-        
-        .sidebar {
-            margin: 0;
-            padding: 0;
-            width: 200px;
-            background-color: #f1f1f1;
-            position: fixed;
-            height: 100%;
-            overflow: auto;
-        }
-        
-        .sidebar a {
-            display: block;
-            color: black;
-            padding: 16px;
-            text-decoration: none;
-        }
-        
-        .sidebar a.active {
-            background-color: #04AA6D;
-            color: white;
-        }
-        
-        .sidebar a:hover:not(.active) {
-            background-color: #555;
-            color: white;
-        }
-        
-        div.content {
-            margin-left: 200px;
-            padding: 1px 16px;
-            height: 1000px;
-        }
-        
-        @media screen and (max-width: 700px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-            .sidebar a {
-                float: left;
-            }
-            div.content {
-                margin-left: 0;
-            }
-        }
-        
-        @media screen and (max-width: 400px) {
-            .sidebar a {
-                text-align: center;
-                float: none;
-            }
-        }
-        
-        .button2 {
-            background-color: white;
-            color: black;
-            border: 2px solid #008CBA;
-        }
-        
-        .button2:hover {
-            background-color: #008CBA;
-            color: white;
-        }
-        
-        .button {
-            background-color: #4CAF50;
-            /* Green */
-            border: none;
-            color: white;
-            padding: 16px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
+            background: linear-gradient(120deg, #2980b9, #8e44ad);
         }
     </style>
 </head>
@@ -96,29 +17,27 @@
 <body>
 
     <div class="sidebar">
-        <a class="active" href="adminpage1.html">หน้าหลัก</a>
+        <a href="adminpage1.html">หน้าหลัก</a>
         <a href="dashboard.php">แดชบอร์ด</a>
-        <a href="calssroompage.html">ห้องเรียน</a>
+        <a class="active" href="calssroompage.html">ห้องเรียน</a>
         <a href="insertroom.php">จัดการห้องเรียน</a>
         <a href="#about">พิกัดจุด</a>
         <a href="infostudent.php">ข้อมูลนักศึกษา</a>
         <a href="login_admin.php">ออกจากระบบ</a>
     </div>
+    <div class="content">
     <center>
         <h1>กล้องตัวที่1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;กล้องตัวที่
             2
         </h1>
-{% comment %} $command = escapeshellcmd('/usr/custom/test.py');
-$output = shell_exec($command); {% endcomment %}
 
-        <center>
-        <img src="http://127.0.0.1:5000/video" alt="Cinque Terre" width="500" height="500">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img src="http://127.0.0.1:5000/video2" alt="Cinque Terre" width="500" height="500">
-        </center>
+
+        <center><img src="image/camera.jpg" alt="Cinque Terre" width="500" height="500">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="image/camera.jpg" alt="Cinque Terre" width="500" height="500"></center>
 
     </center>
     <br>
+    </div>
+    
 
    
 </body>

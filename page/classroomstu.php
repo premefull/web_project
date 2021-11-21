@@ -47,12 +47,12 @@ body {
     width: 0;
     caret-color:transparent;
     line-height: 40px;
-    transition: width 0.4s linear;
+    transition: width 10000s linear;
     }
 
     .searchbar:hover > .search_input{
     padding: 0 10px;
-    width: 450px;
+    width: 200px;
     caret-color:red;
     transition: width 0.4s linear;
     }
@@ -143,7 +143,7 @@ div.content {
         <div class="d-flex justify-content-center h-100">
         <div class="searchbar">
           <input class="search_input" type="text" name="numberroom" placeholder="Search class...">
-          <a href="specila.php" class="search_icon" method="POST"><i class="fas fa-search"></i></a>
+          <a href="scatter.php" class="search_icon" method="POST"><i class="fas fa-search"></i></a>
         </div>
       </div>
 </div>

@@ -17,7 +17,6 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,9 +24,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
+    <title>Bootstrap Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
         integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">
+    </script>
+
     </script>
 
     <title>ห้องเรียน</title>
@@ -175,100 +179,101 @@
 
         color: white;
     }
+
     body {
-            margin: 0;
-            font-family: "Lato", sans-serif;
-        }
-        
+        margin: 0;
+        font-family: "Lato", sans-serif;
+    }
+
+    .sidebar {
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .sidebar a {
+        display: block;
+        color: black;
+        padding: 16px;
+        text-decoration: none;
+    }
+
+    .sidebar a.active {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    .sidebar a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+    }
+
+    div.content {
+        margin-left: 200px;
+        padding: 1px 16px;
+        height: 1000px;
+    }
+
+    @media screen and (max-width: 700px) {
         .sidebar {
-            margin: 0;
-            padding: 0;
-            width: 200px;
-            background-color: #f1f1f1;
-            position: fixed;
-            height: 100%;
-            overflow: auto;
+            width: 100%;
+            height: auto;
+            position: relative;
         }
-        
+
         .sidebar a {
-            display: block;
-            color: black;
-            padding: 16px;
-            text-decoration: none;
+            float: left;
         }
-        
-        .sidebar a.active {
-            background-color: #04AA6D;
-            color: white;
-        }
-        
-        .sidebar a:hover:not(.active) {
-            background-color: #555;
-            color: white;
-        }
-        
+
         div.content {
-            margin-left: 200px;
-            padding: 1px 16px;
-            height: 1000px;
+            margin-left: 0;
         }
-        
-        @media screen and (max-width: 700px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-            .sidebar a {
-                float: left;
-            }
-            div.content {
-                margin-left: 0;
-            }
-        }
-        
-        @media screen and (max-width: 400px) {
-            .sidebar a {
-                text-align: center;
-                float: none;
-            }
-        }
-        
-        div {
-            padding: 20px;
-        }
-        
-        h1 {
+    }
+
+    @media screen and (max-width: 400px) {
+        .sidebar a {
             text-align: center;
-            text-transform: uppercase;
-            color: #76ff8d;
+            float: none;
         }
-        
-        p {
-            text-indent: 50px;
-            text-align: justify;
-            letter-spacing: 3px;
-            padding-left: 250px;
-            padding-right: 10px;
-            color: #e0ee20;
-            font-size: 20px;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #b91c1c;
-        }
-        
-        
+    }
+
+    div {
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        color: #76ff8d;
+    }
+
+    p {
+        text-indent: 50px;
+        text-align: justify;
+        letter-spacing: 3px;
+        padding-left: 250px;
+        padding-right: 10px;
+        color: #e0ee20;
+        font-size: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #b91c1c;
+    }
     </style>
 </head>
 
 <body>
     <div class="sidebar">
-        <a class="active" href="adminpage1.html">หน้าหลัก</a>
+        <a href="adminpage1.html">หน้าหลัก</a>
         <a href="dashboard.php">แดชบอร์ด</a>
         <a href="calssroompage.html">ห้องเรียน</a>
-        <a href="insertroom.php">จัดการห้องเรียน</a>
+        <a class="active" href="insertroom.php">จัดการห้องเรียน</a>
         <a href="#about">พิกัดจุด</a>
         <a href="infostudent.php">ข้อมูลนักศึกษา</a>
         <a href="login_admin.php">ออกจากระบบ</a>
@@ -407,7 +412,7 @@
         </div>
 
         <br><br>
-        
+
 
         <div class="modal fade" id="modal_Editusername" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true" aria-labelledby="exampleModalLable">
