@@ -19,64 +19,70 @@ include('connect.php');
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-     
-<style>
-   body {
-  background: linear-gradient(120deg, #2980b9, #8e44ad);
-  margin: 0;
-  font-family: "Lato", sans-serif;
-}
 
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
+    <style>
+    body {
+        background: linear-gradient(120deg, #2980b9, #8e44ad);
+        margin: 0;
+        font-family: "Lato", sans-serif;
+    }
 
-.sidebar a {
-  display: block;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-}
- 
-.sidebar a.active {
-  background-color: #173F5F;
-  color: white;
-}
+    .sidebar {
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+    }
 
-.sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
+    .sidebar a {
+        display: block;
+        color: black;
+        padding: 16px;
+        text-decoration: none;
+    }
 
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
-}
+    .sidebar a.active {
+        background-color: #173F5F;
+        color: white;
+    }
 
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div.content {margin-left: 0;}
-}
+    .sidebar a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+    }
 
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-}
-</style>
+    div.content {
+        margin-left: 200px;
+        padding: 1px 16px;
+        height: 1000px;
+    }
+
+    @media screen and (max-width: 700px) {
+        .sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+
+        .sidebar a {
+            float: left;
+        }
+
+        div.content {
+            margin-left: 0;
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .sidebar a {
+            text-align: center;
+            float: none;
+        }
+    }
+    </style>
 </head>
 
 
@@ -100,7 +106,7 @@ div.content {
 
         <!-- <center><br>
         <h2>ประวัติส่วนตัวนักศึกษา</h2><br>
-        <?php echo "<img src='facedata/" . $data["S_image"] . "'width=250 height=300' >"; ?>
+        
       </center><br>
 
     <?php }  ?>
@@ -112,9 +118,9 @@ div.content {
             <br>
             <h1>ประวัติส่วนตัวนักศึกษา</h1>
             <br>
-            <div class="card" style="width: 280px;">
+            <div class="card" style="width: 330px;">
 
-                <center><?php echo "<img src='facedata/" . $data["S_image"] . "'width=200 height=300' >"; ?></center>
+                <center><?php echo "<img src='facedata/" . $data["S_image"] . "'width=300 height=300' >"; ?></center>
                 <div class="card-body">
                     <h4>ชื่อ :<?php echo $data["S_name"]; ?></h4>
                     <br>
@@ -123,10 +129,8 @@ div.content {
                     <h4>รหัสนักศึกษา :<?php echo $data["S_id"]; ?></h4>
                 </div>
                 <br>
-            </div>
-
         </center>
-
+    </div>
     </div>
 
 </body>
