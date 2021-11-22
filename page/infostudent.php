@@ -80,7 +80,8 @@ if ($last != 1) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ข้อมูลนักศึกษา</title>
@@ -88,123 +89,123 @@ if ($last != 1) {
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link rel="stylesheet" href="navbar.css">
     <style>
-        body {
-            margin: 0;
-            font-family: "Lato", sans-serif;
-            background: linear-gradient(120deg, #2980b9, #8e44ad);
-        }
+    body {
+        margin: 0;
+        font-family: "Lato", sans-serif;
+        background: linear-gradient(120deg, #2980b9, #8e44ad);
+    }
 
-        .searchbar {
-            margin-bottom: auto;
-            margin-top: auto;
-            height: 60px;
-            background-color: #353b48;
-            border-radius: 30px;
-            padding: 10px;
-        }
+    .searchbar {
+        margin-bottom: auto;
+        margin-top: auto;
+        height: 60px;
+        background-color: #353b48;
+        border-radius: 30px;
+        padding: 10px;
+    }
 
-        .search_input {
-            color: white;
-            border: 0;
-            outline: 0;
-            background: none;
-            width: 0;
-            caret-color: transparent;
-            line-height: 40px;
-            transition: width 10000s linear;
-        }
+    .search_input {
+        color: white;
+        border: 0;
+        outline: 0;
+        background: none;
+        width: 0;
+        caret-color: transparent;
+        line-height: 40px;
+        transition: width 10000s linear;
+    }
 
-        .searchbar:hover>.search_input {
-            padding: 0 10px;
-            width: 200px;
-            caret-color: red;
-            transition: width 0.4s linear;
-        }
+    .searchbar:hover>.search_input {
+        padding: 0 10px;
+        width: 200px;
+        caret-color: red;
+        transition: width 0.4s linear;
+    }
 
-        .searchbar:hover>.search_icon {
-            background: white;
-            color: #e74c3c;
-        }
+    .searchbar:hover>.search_icon {
+        background: white;
+        color: #e74c3c;
+    }
 
-        .search_icon {
-            height: 40px;
-            width: 40px;
-            float: right;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-        }
+    .search_icon {
+        height: 40px;
+        width: 40px;
+        float: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+    }
 
+    .sidebar {
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .sidebar a {
+        display: block;
+        color: black;
+        padding: 16px;
+        text-decoration: none;
+    }
+
+    .sidebar a.active {
+        background-color: #04AA6D;
+        color: black;
+    }
+
+    .sidebar a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+    }
+
+    div.content {
+        margin-left: 200px;
+        padding: 1px 16px;
+        height: 100px;
+    }
+
+    @media screen and (max-width: 700px) {
         .sidebar {
-            margin: 0;
-            padding: 0;
-            width: 200px;
-            background-color: #f1f1f1;
-            position: fixed;
-            height: 100%;
-            overflow: auto;
+            width: 100%;
+            height: auto;
+            position: relative;
         }
 
         .sidebar a {
-            display: block;
-            color: black;
-            padding: 16px;
-            text-decoration: none;
-        }
-
-        .sidebar a.active {
-            background-color: #04AA6D;
-            color: black;
-        }
-
-        .sidebar a:hover:not(.active) {
-            background-color: #555;
-            color: white;
+            float: left;
         }
 
         div.content {
-            margin-left: 200px;
-            padding: 1px 16px;
-            height: 100px;
+            margin-left: 0;
         }
+    }
 
-        @media screen and (max-width: 700px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-            }
-
-            .sidebar a {
-                float: left;
-            }
-
-            div.content {
-                margin-left: 0;
-            }
-        }
-
-        @media screen and (max-width: 400px) {
+    /* @media screen and (max-width: 400px) {
             .sidebar a 50 text-align: center;
             float: none;
         }
 
-        }
+        } */
 
-        .loading {
-            background-image: url("ajax-loader.gif");
-            background-repeat: no-repeat;
-            display: none;
-            height: 100px;
-            width: 100px;
-        }
+    .loading {
+        background-image: url("ajax-loader.gif");
+        background-repeat: no-repeat;
+        display: none;
+        height: 100px;
+        width: 100px;
+    }
 
-        .form-control {
-            width: 150px;
-        }
+    .form-control {
+        width: 150px;
+    }
     </style>
 
 </head>
@@ -235,91 +236,80 @@ if ($last != 1) {
             <br>
             <form name="frmSearch" method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
                 <div class=" form-group">
-                    <input class="form-control" placeholder="รหัสนักศึกษา" name="txtKeyword" type="text" id="txtKeyword" value="<?php echo $strKeyword; ?>">
+                    <input class="form-control" placeholder="รหัสนักศึกษา" name="txtKeyword" type="text" id="txtKeyword"
+                        value="<?php echo $strKeyword; ?>">
                     <input type="submit" value="ค้นหา">
 
                 </div>
             </form>
-    </div>
-    </div>
-    </div>
-    </center>
-    <?php
+
+        </center>
+        <?php
     $sql = "SELECT * FROM student WHERE S_id LIKE '%" . $strKeyword . "%' ";
     $query = mysqli_query($conn, $sql);
     ?>
 
-    <div" rel="nofollow">
-        <div style="height: 20px;"></div>
-        <div class="row">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-6">
-                <h4>ข้อมูลนักศึกษา</h4>
-                <table class="table table-striped table-bordered table-hover">
-                    <thead>
-                        <tr class="info">
-                            <th>ชื่อจริง</th>
-                            <th>นามสกุล</th>
-                            <th>รหัสนักศึกษา</th>
-                            <th>รหัสผ่าน</th>
-                        </tr>
-                    </thead>
-                    <?php
-                    while ($crow = mysqli_fetch_array($nquery, MYSQLI_ASSOC)) {
+        <div" rel="nofollow">
+            <center>
+                <div style="height: 20px;"></div>
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-6">
+                        <font color="white">
+                            <h4>ข้อมูลนักศึกษา</h4>
+                        </font>
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr class="info">
+                                    <th>
+                                        <font color="white">ชื่อจริง</text>
+                                    </th>
+                                    <th>
+                                        <font color="white">นามสกุล</font>
+                                    </th>
+                                    <th>
+                                        <font color="white">รหัสนักศึกษา</font>
+                                    </th>
+                                    <th>
+                                        <font color="white">รหัสผ่าน</font>
+                                    </th>
+                                </tr>
+
+                            </thead>
+                            <?php
+                    while ($crow = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
                     ?>
-                        <tbody>
-                            <tr>
-                                <td><?php echo $crow['S_name']; ?></td>
-                                <td><?php echo $crow['S_surname']; ?></td>
-                                <td><?php echo $crow['S_id']; ?></td>
-                                <td><?php echo $crow['S_pass']; ?></td>
-                            </tr>
-                        <?php
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <font color="white"><?php echo $crow['S_name']; ?></font>
+                                    </td>
+                                    <td>
+                                        <font color="white"><?php echo $crow['S_surname']; ?></font>
+                                    <td>
+                                        <font color="white"><?php echo $crow['S_id']; ?></font>
+                                    </td>
+                                    <td>
+                                        <font color="white"><?php echo $crow['S_pass']; ?></font>
+                                    </td>
+                                </tr>
+                                <?php
                     }
                         ?>
-                        </tbody>
-                </table>
-                <div id="pagination_controls"><?php echo $paginationCtrls; ?></div>
-            </div>
-            <div class="col-lg-2"></div>
-        </div>
-        </div>
+                            </tbody>
+                        </table>
 
+                        <div id="pagination_controls"><?php echo $paginationCtrls; ?></div>
+                    </div>
+                </center>
+    </div>
+    </div>
+    <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
 
-        </div>
-        <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
-        <script type="text/javascript">
-            $(function() {
-                $("#btnSearch").click(function() {
-                    $.ajax({
-                        url: "search.php",
-                        type: "post",
-                        data: {
-                            S_id: $("#S_id").val()
-                        },
-                        beforeSend: function() {
-                            $(".loading").show();
-                        },
-                        complete: function() {
-                            $(".loading").hide();
-                        },
-                        success: function(data) {
-                            $("#list-data").html(data);
-                        }
-                    });
-                });
-                $("#searchform").on("keyup keypress", function(e) {
-                    var code = e.keycode || e.which;
-                    if (code == 13) {
-                        $("#btnSearch").click();
-                        return false;
-                    }
-                });
-            });
-        </script>
-        <?php
+    <?php
         mysqli_close($conn);
         ?>
+    </div>
 </body>
 
 </html>
