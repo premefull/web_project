@@ -59,7 +59,7 @@
                     data: chartdata
                 })
                 let asd = new Chart(graphCanvas2, {
-                    type: 'scatter',
+                    type: 'bar',
                     data: chartdata
                 })
             })
